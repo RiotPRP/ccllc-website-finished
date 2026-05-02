@@ -1,0 +1,2721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment Catalog | Consummate Consulting LLC</title>
+  <meta name="description" content="Consummate Consulting flagship powder coating cure ovens, ROI calculator, and custom system configuration tool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   CONSUMMATE CONSULTING LLC — GLOBAL DESIGN SYSTEM
+   Industrial / Safety Orange / Carbon Black
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Share+Tech+Mono&display=swap');
+
+/* ---- CSS VARIABLES ---- */
+:root {
+  --orange:       #FF4D00;
+  --orange-dark:  #CC3D00;
+  --orange-dim:   rgba(255, 77, 0, 0.12);
+  --orange-glow:  rgba(255, 77, 0, 0.25);
+  --bg-0:         #080808;
+  --bg-1:         #0F0F0F;
+  --bg-2:         #151515;
+  --bg-3:         #1C1C1C;
+  --bg-4:         #232323;
+  --bg-card:      #191919;
+  --border:       #2A2A2A;
+  --border-mid:   #333333;
+  --white:        #FFFFFF;
+  --off-white:    #E8E8E8;
+  --gray-light:   #BBBBBB;
+  --gray:         #888888;
+  --gray-dark:    #555555;
+  --header-bg:    #FFFFFF;
+  --header-bdr:   #FF4D00;
+  --header-h:     88px;
+  --radius:       2px;
+  --font-display: 'Bebas Neue', display;
+  --font-cond:    'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+input, textarea, select { font: inherit; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-1);
+  color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--header-bg);
+  border-bottom: 5px solid var(--header-bdr);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Centered logo */
+.header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 1;
+}
+.header-logo img {
+  max-height: 100px;
+  width: auto;
+}
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.logo-primary {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: #0A0A0A;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.logo-accent {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  margin: 2px 0;
+}
+.logo-sub {
+  font-family: var(--font-cond);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Nav left */
+.site-nav {
+  display: flex;
+  gap: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+.site-nav a {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.18s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.2s ease;
+}
+.site-nav a:hover,
+.site-nav a.active { color: var(--orange); }
+.site-nav a:hover::after,
+.site-nav a.active::after { width: 100%; }
+
+/* Phone right */
+.header-phone {
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: color 0.18s;
+}
+.header-phone:hover { color: var(--orange); }
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #1A1A1A;
+  transition: all 0.3s;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
+}
+.btn-primary:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px var(--orange-glow);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--border-mid);
+}
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+}
+.btn-ghost:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+.btn-lg { padding: 1.1rem 2.8rem; font-size: 1.05rem; }
+.btn-sm { padding: 0.55rem 1.3rem; font-size: 0.8rem; }
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.container--wide { max-width: 1440px; }
+
+.section {
+  padding: 6rem 0;
+}
+.section--sm { padding: 3.5rem 0; }
+.section--lg { padding: 9rem 0; }
+
+.section-label {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--gray-light);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.orange { color: var(--orange); }
+.text-gray { color: var(--gray); }
+.text-mono { font-family: var(--font-mono); }
+
+/* Grid helpers */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* Divider */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 4rem 0;
+}
+.divider--orange {
+  background: linear-gradient(90deg, var(--orange), transparent);
+}
+
+/* ============================================================
+   HERO (index.html)
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-0);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(255,77,0,0.04) 59px,
+      rgba(255,77,0,0.04) 60px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(255,77,0,0.04) 59px,
+      rgba(255,77,0,0.04) 60px
+    ),
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255,77,0,0.07) 0%, transparent 70%),
+    var(--bg-0);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(8,8,8,0.95) 35%, rgba(8,8,8,0.4) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem 4rem;
+  max-width: 860px;
+  margin-left: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
+}
+
+.hero-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-badge::before {
+  content: '▶';
+  font-size: 0.5rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Ticker */
+.hero-ticker {
+  position: relative;
+  z-index: 2;
+  background: var(--orange);
+  padding: 0.65rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+}
+.ticker-inner span {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--white);
+  padding-right: 0;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   HOME — THE PROBLEM
+   ============================================================ */
+.problem-section {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.problem-text p {
+  color: var(--gray-light);
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+.stat-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-label {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Compliance timeline card */
+.compliance-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.compliance-header {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  padding: 1rem 1.5rem;
+  background: rgba(255,77,0,0.06);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-item:hover { background: var(--bg-3); }
+
+.tl-year {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gray-dark);
+  min-width: 56px;
+  flex-shrink: 0;
+}
+.timeline-item.active   .tl-year { color: var(--gray-light); }
+.timeline-item.warning  .tl-year { color: #FFB800; }
+.timeline-item.danger   .tl-year { color: var(--orange); }
+
+.tl-event {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.timeline-item.active  .tl-event { color: var(--gray-light); }
+.timeline-item.warning .tl-event { color: var(--off-white); }
+.timeline-item.danger  .tl-event { color: var(--white); }
+
+/* ============================================================
+   HOME — THE MOAT
+   ============================================================ */
+.moat-section {
+  background: var(--bg-1);
+}
+.moat-callout {
+  margin: 2rem 0 3rem;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--orange);
+  background: var(--orange-dim);
+}
+.moat-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.moat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.moat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.moat-card:hover { border-color: var(--border-mid); transform: translateY(-3px); }
+.moat-card:hover::before { transform: scaleX(1); }
+.moat-icon {
+  font-size: 1.5rem;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+.moat-card h3 {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.moat-card p {
+  font-size: 0.92rem;
+  color: var(--gray-light);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band {
+  background: var(--bg-0);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,77,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-content {
+  text-align: center;
+  position: relative;
+}
+.cta-label {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.cta-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--bg-0);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.footer-tagline {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  line-height: 1.5;
+  max-width: 280px;
+  margin-bottom: 1rem;
+}
+.footer-phone a {
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.05em;
+}
+.footer-nav h4 {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.footer-nav a, .footer-contact p {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  transition: color 0.18s;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.footer-nav a:hover { color: var(--orange); }
+.footer-contact h4 {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.footer-bar p {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  color: var(--gray-dark);
+  letter-spacing: 0.05em;
+}
+.footer-tag { color: var(--gray-dark) !important; font-style: italic; }
+
+/* ============================================================
+   CATALOG PAGE
+   ============================================================ */
+.page-hero {
+  background: var(--bg-0);
+  padding: 5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg, transparent, transparent 79px,
+      rgba(255,77,0,0.03) 79px, rgba(255,77,0,0.03) 80px
+    );
+}
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.page-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+}
+.page-desc {
+  font-size: 1rem;
+  color: var(--gray-light);
+  max-width: 580px;
+  line-height: 1.75;
+}
+
+/* ---- FLAGSHIP OVEN ---- */
+.flagship-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+}
+
+.flagship-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.flagship-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.flagship-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+}
+.flagship-model {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--orange);
+  letter-spacing: 0.25em;
+  margin-bottom: 1.5rem;
+}
+.flagship-desc {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.spec-table {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.spec-row {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-key {
+  width: 45%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-cond);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray);
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+}
+.spec-val {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--bg-3);
+}
+
+/* Honeycomb plenum image area */
+.plenum-showcase {
+  position: sticky;
+  top: calc(var(--header-h) + 2rem);
+}
+.plenum-img-wrap {
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.plenum-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.plenum-img-wrap .img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+.plenum-img-wrap .img-placeholder svg {
+  width: 64px;
+  height: 64px;
+  opacity: 0.2;
+}
+.img-placeholder-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray-dark);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.img-caption {
+  padding: 0.85rem 1rem;
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  text-transform: uppercase;
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+/* ---- EFFICIENCY ENHANCEMENTS ---- */
+.efficiency-section {
+  background: var(--bg-2);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.efficiency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.efficiency-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.efficiency-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+.eff-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange-dim);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+.eff-title {
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.eff-metric {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.eff-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ---- ROI CALCULATOR ---- */
+.roi-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.roi-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.roi-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.roi-form h3 {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+.field-group {
+  margin-bottom: 1.25rem;
+}
+.field-group label {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.4rem;
+}
+.field-group input,
+.field-group select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+.field-group input::placeholder { color: var(--gray-dark); }
+
+.roi-results {
+  position: sticky;
+  top: calc(var(--header-h) + 2rem);
+}
+.roi-card {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.roi-card-header {
+  background: var(--orange);
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.roi-metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.roi-metric {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.roi-metric:nth-child(even) { border-right: none; }
+.roi-metric:nth-last-child(-n+2) { border-bottom: none; }
+.roi-metric-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.roi-metric-label {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Payback bar */
+.payback-bar-wrap {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.payback-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+.payback-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.payback-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.roi-disclaimer {
+  font-size: 0.75rem;
+  color: var(--gray-dark);
+  font-style: italic;
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+/* ---- BUILD YOUR OWN OVEN ---- */
+.byo-section {
+  background: var(--bg-2);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.byo-container {
+  margin-top: 3rem;
+}
+.byo-steps {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.byo-step-tab {
+  flex: 1;
+  padding: 0.85rem 0.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.byo-step-tab:last-child { border-right: none; }
+.byo-step-tab.active {
+  background: var(--orange);
+  color: var(--white);
+}
+.byo-step-tab .step-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: inherit;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.byo-panel {
+  display: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  animation: fadeIn 0.3s ease;
+}
+.byo-panel.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.byo-panel-title {
+  font-family: var(--font-cond);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.byo-panel-title::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--orange);
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.option-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  position: relative;
+}
+.option-card:hover { border-color: var(--border-mid); }
+.option-card.selected {
+  border-color: var(--orange);
+  background: var(--orange-dim);
+}
+.option-card.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.7rem;
+  color: var(--orange);
+  font-weight: 900;
+}
+.option-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.option-name {
+  font-family: var(--font-cond);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+.option-desc {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.dimension-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.byo-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+/* Config summary */
+.config-summary {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.config-summary h4 {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.config-item:last-child { border-bottom: none; }
+.config-key { color: var(--gray); font-family: var(--font-cond); font-weight: 600; }
+.config-val { color: var(--white); font-family: var(--font-cond); font-weight: 700; }
+
+/* ---- VR TOOL ---- */
+.vr-section {
+  background: var(--bg-0);
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+.vr-placeholder {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  margin-top: 2.5rem;
+}
+.vr-screen {
+  aspect-ratio: 16/6;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,77,0,0.08) 0%, transparent 70%),
+    var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.vr-icon {
+  font-size: 3.5rem;
+  opacity: 0.2;
+}
+.vr-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+.vr-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+.vr-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+}
+.vr-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--orange);
+  border-style: solid;
+  opacity: 0.4;
+}
+.vr-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.vr-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.vr-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.vr-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* ---- COMING SOON SECTIONS ---- */
+.coming-soon-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.cs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 280px;
+}
+.cs-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-diagonal-stripe;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,77,0,0.03) 8px,
+      rgba(255,77,0,0.03) 9px
+    );
+}
+.cs-badge {
+  display: inline-block;
+  background: var(--border);
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+.cs-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  opacity: 0.7;
+  position: relative;
+}
+.cs-desc {
+  font-size: 0.88rem;
+  color: var(--gray-dark);
+  line-height: 1.65;
+  position: relative;
+}
+.cs-notify {
+  margin-top: auto;
+  position: relative;
+}
+.cs-notify input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+.cs-notify input::placeholder { color: var(--gray-dark); }
+.cs-notify button {
+  width: 100%;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition: all 0.2s;
+}
+.cs-notify button:hover { border-color: var(--orange); color: var(--orange); cursor: pointer; }
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-intro {
+  background: var(--bg-1);
+  padding: 5rem 0;
+}
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.about-lead {
+  font-family: var(--font-cond);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.about-body {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+.about-values {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.value-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.value-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.value-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--orange);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+}
+.value-text h4 {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.value-text p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Process flow */
+.process-section {
+  background: var(--bg-2);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.process-flow {
+  margin-top: 3rem;
+  position: relative;
+}
+.process-flow::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--orange), rgba(255,77,0,0.1));
+}
+.process-step {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  position: relative;
+}
+.process-num {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--orange);
+  position: relative;
+  z-index: 1;
+}
+.process-content {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+.process-content h3 {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.process-content p {
+  font-size: 0.92rem;
+  color: var(--gray-light);
+  line-height: 1.75;
+}
+.process-tag {
+  display: inline-block;
+  background: var(--orange-dim);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  margin-top: 0.5rem;
+}
+
+/* Roadmap */
+.roadmap-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.roadmap-phase {
+  padding: 1.5rem 1.25rem;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.roadmap-phase:last-child { border-right: none; }
+.rp-years {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.rp-title {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.rp-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.rp-item {
+  font-size: 0.78rem;
+  color: var(--gray);
+  display: flex;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+.rp-item::before {
+  content: '—';
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.rp-active { background: rgba(255,77,0,0.04); }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-form-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+}
+.contact-form-wrap h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.form-sub {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-dim);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--gray-dark); }
+.form-group select { appearance: none; cursor: pointer; }
+.form-group textarea { resize: vertical; min-height: 140px; }
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.form-note {
+  font-size: 0.78rem;
+  color: var(--gray-dark);
+  font-style: italic;
+}
+
+/* Contact sidebar */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.cb-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+}
+.cb-value {
+  font-family: var(--font-cond);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+.cb-value a { color: var(--white); transition: color 0.18s; }
+.cb-value a:hover { color: var(--orange); }
+.cb-note {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+.partnership-block {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.partnership-block h4 {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+}
+.partnership-block p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SUCCESS / NOTIFICATION STATES
+   ============================================================ */
+.form-success {
+  display: none;
+  background: rgba(0, 180, 100, 0.1);
+  border: 1px solid rgba(0, 180, 100, 0.3);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #00B464;
+  margin-top: 1rem;
+}
+.form-success.show { display: block; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .problem-grid { grid-template-columns: 1fr; }
+  .flagship-grid { grid-template-columns: 1fr; }
+  .plenum-showcase { position: static; }
+  .roadmap-timeline { grid-template-columns: repeat(3, 1fr); }
+  .roadmap-phase:nth-child(3) { border-right: none; }
+  .roadmap-phase:nth-child(4) { border-top: 1px solid var(--border); }
+  .roadmap-phase:nth-child(5) { border-top: 1px solid var(--border); border-right: none; }
+  .roi-container { grid-template-columns: 1fr; }
+  .roi-results { position: static; }
+  .about-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --header-h: 70px; }
+
+  .site-nav { display: none; flex-direction: column; position: absolute; top: calc(100% + 5px); left: 0; background: var(--white); padding: 1rem 2rem; width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); border-radius: 0 0 4px 4px; gap: 1rem; }
+  .site-nav.open { display: flex; }
+  .nav-toggle { display: flex; }
+
+  .header-phone { display: none; }
+  .logo-primary { font-size: 1.4rem; }
+
+  .hero-content { padding: 3rem 1.5rem 2rem; }
+  .hero-headline { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+
+  .moat-grid { grid-template-columns: 1fr; }
+  .efficiency-grid { grid-template-columns: 1fr; }
+  .cs-grid { grid-template-columns: 1fr; }
+  .byo-steps { flex-wrap: wrap; }
+  .roadmap-timeline { grid-template-columns: 1fr 1fr; }
+  .roadmap-phase:nth-child(2) { border-right: none; }
+  .roadmap-phase:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+  .roadmap-phase:nth-child(5) { border-right: none; }
+  .stat-row { gap: 1.5rem; flex-wrap: wrap; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-flow::before { left: 27px; }
+  .dimension-inputs { grid-template-columns: 1fr; }
+  .roi-metric-grid { grid-template-columns: 1fr; }
+  .roi-metric { border-right: none !important; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 4rem 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .byo-step-tab { padding: 0.6rem 0.3rem; }
+  .btn-lg { padding: 0.9rem 1.8rem; font-size: 0.95rem; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ======================== HEADER ======================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html" class="active">Catalog</a>
+        <a href="about.html">Mission</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-logo">
+        <div class="logo-wordmark">
+          <span class="logo-primary">CONSUMMATE</span>
+          <span class="logo-accent"></span>
+          <span class="logo-sub">Consulting LLC &nbsp;///&nbsp; Industrial Systems</span>
+        </div>
+      </div>
+      <a href="tel:5039747141" class="header-phone">503-974-7141 ext. 800</a>
+    </div>
+  </header>
+
+  <!-- ======================== PAGE HERO ======================== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-badge">// Equipment Catalog — 2025 Build Season</div>
+        <h1 class="page-title">Engineered Systems.<br><span class="orange">Not Off-the-Shelf.</span></h1>
+        <p class="page-desc">
+          Every system in our catalog begins as a blank engineering sheet tied to your production
+          data. What you see here are baselines — every unit ships with facility-specific
+          modifications as standard.
+        </p>
+        <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="#flagship-oven" class="btn btn-primary">Flagship Cure Oven</a>
+          <a href="#roi-calculator" class="btn btn-ghost">ROI Calculator</a>
+          <a href="#byo-oven" class="btn btn-ghost">Build Your Own</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FLAGSHIP OVEN ======================== -->
+  <section class="flagship-section" id="flagship-oven">
+    <div class="container">
+      <div class="section-label">Flagship Product — Series 1</div>
+      <div class="flagship-grid">
+
+        <!-- LEFT: Specs -->
+        <div class="flagship-specs">
+          <div class="flagship-model">// CCL-PCO-1 &nbsp;|&nbsp; POWDER COAT CURE OVEN</div>
+          <h2 class="flagship-title">
+            High-Performance<br>
+            <span class="orange">Industrial Cure Oven</span>
+          </h2>
+          <p class="flagship-desc">
+            Designed from the substrate up. Our flagship cure oven is not a catalog item with
+            your logo stamped on it — it is engineered around your specific part geometries,
+            throughput targets, and substrate mass profiles. The result is a system that cures
+            faster, more uniformly, and at lower energy cost than any competitor's off-the-shelf solution.
+          </p>
+
+          <div class="spec-table">
+            <div class="spec-row">
+              <div class="spec-key">Heat Source</div>
+              <div class="spec-val">Natural Gas / Electric / Dual-Fuel (Configurable)</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Temperature Range</div>
+              <div class="spec-val">Ambient to 500°F (Configurable to 550°F)</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Uniformity</div>
+              <div class="spec-val">±5°F Across Full Cure Zone</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Construction</div>
+              <div class="spec-val">4" Modular Insulated Panel — Steel Shell</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Air Circulation</div>
+              <div class="spec-val">Forced Convection — Honeycomb Plenum Design</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Control System</div>
+              <div class="spec-val">PLC w/ HMI Touchscreen — Data Logging Ready</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Conveyor Ready</div>
+              <div class="spec-val">Monorail / Power-and-Free / Batch (All Options)</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Footprint</div>
+              <div class="spec-val">Custom — Engineering Drawing Provided w/ Quote</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-key">Compliance</div>
+              <div class="spec-val">NFPA 86 / UL Listed Controls / EPA VOC Compliant</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Request a Build Quote</a>
+            <a href="#byo-oven" class="btn btn-ghost">Configure Your System</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Honeycomb Plenum Image -->
+        <div class="plenum-showcase">
+          <div class="plenum-img-wrap" id="plenumWrap">
+            <!-- 
+              ============================================================
+              HONEYCOMB PLENUM BOX DESIGN IMAGE PLACEMENT
+              Place your image file as "honeycomb-plenum.jpg" in the 
+              same directory, or update src= below.
+              ============================================================
+            -->
+            <img
+              src="honeycomb-plenum.jpg"
+              alt="Consummate Consulting — Proprietary Honeycomb Plenum Box Design"
+              onerror="this.parentNode.querySelector('.img-fallback').style.display='flex'; this.style.display='none';"
+            >
+            <div class="img-fallback img-placeholder" style="display:none;">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:72px;opacity:0.25;">
+                <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="#FF4D00" stroke-width="1.5" fill="none"/>
+                <polygon points="32,16 46,24 46,40 32,48 18,40 18,24" stroke="#FF4D00" stroke-width="1" fill="none"/>
+                <line x1="32" y1="4" x2="32" y2="16" stroke="#FF4D00" stroke-width="0.8"/>
+                <line x1="58" y1="18" x2="46" y2="24" stroke="#FF4D00" stroke-width="0.8"/>
+                <line x1="58" y1="46" x2="46" y2="40" stroke="#FF4D00" stroke-width="0.8"/>
+                <line x1="32" y1="60" x2="32" y2="48" stroke="#FF4D00" stroke-width="0.8"/>
+                <line x1="6" y1="46" x2="18" y2="40" stroke="#FF4D00" stroke-width="0.8"/>
+                <line x1="6" y1="18" x2="18" y2="24" stroke="#FF4D00" stroke-width="0.8"/>
+              </svg>
+              <div class="img-placeholder-label">
+                Honeycomb Plenum Box<br>Design Image Goes Here<br>
+                <span style="color: var(--orange); font-size: 0.6rem;">[ Add honeycomb-plenum.jpg ]</span>
+              </div>
+            </div>
+          </div>
+          <div class="img-caption">
+            ⬡ &nbsp; Proprietary Honeycomb Plenum Box — Engineered for ±5°F Uniformity
+          </div>
+
+          <!-- Feature callouts -->
+          <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px;">
+              <span style="color: var(--orange); font-size: 1.2rem; flex-shrink: 0;">⬡</span>
+              <div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.2rem;">Honeycomb Plenum Architecture</div>
+                <div style="font-size: 0.8rem; color: var(--gray); line-height: 1.5;">Our proprietary plenum box geometry creates laminar airflow across the full cure zone. No hot spots. No cold zones. Every part cures identically, regardless of position.</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px;">
+              <span style="color: var(--orange); font-size: 1.2rem; flex-shrink: 0;">◈</span>
+              <div>
+                <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.2rem;">Data-Logged Cure Cycles</div>
+                <div style="font-size: 0.8rem; color: var(--gray); line-height: 1.5;">Every cure cycle is logged with timestamp, temperature profile, and dwell time — creating an unbroken compliance documentation chain for EPA audits.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EFFICIENCY ENHANCEMENTS ======================== -->
+  <section class="efficiency-section" id="efficiency">
+    <div class="container">
+      <div class="section-label">System Performance Data</div>
+      <h2 class="section-title">Efficiency <span class="orange">Enhancements</span></h2>
+      <p class="section-sub">
+        Measured performance improvements versus industry-standard liquid finishing lines.
+        Data derived from facility conversion projects in the Pacific Northwest.
+      </p>
+
+      <div class="efficiency-grid">
+        <div class="efficiency-card">
+          <div class="eff-icon">♻</div>
+          <div class="eff-title">Material Overspray Recovery</div>
+          <div class="eff-metric">95–98%</div>
+          <div class="eff-desc">Reclaimed powder overspray re-enters the system. Liquid paint overspray is pure waste. The arithmetic of powder is decisive.</div>
+        </div>
+        <div class="efficiency-card">
+          <div class="eff-icon">⚡</div>
+          <div class="eff-title">Energy Cost Reduction</div>
+          <div class="eff-metric">30–45%</div>
+          <div class="eff-desc">Forced-convection honeycomb plenum design eliminates wasted thermal energy. Cure zones reach set-point faster and hold tighter.</div>
+        </div>
+        <div class="efficiency-card">
+          <div class="eff-icon">⏱</div>
+          <div class="eff-title">Cycle Time Reduction</div>
+          <div class="eff-metric">20–35%</div>
+          <div class="eff-desc">Faster ramp-up, tighter temperature bands, and no solvent flash-off period dramatically compress production cycles.</div>
+        </div>
+        <div class="efficiency-card">
+          <div class="eff-icon">☣</div>
+          <div class="eff-title">VOC Emission Reduction</div>
+          <div class="eff-metric">100%</div>
+          <div class="eff-desc">Powder coating produces zero VOC emissions by design. Not a reduction — an elimination. Full EPA compliance from day one of operation.</div>
+        </div>
+        <div class="efficiency-card">
+          <div class="eff-icon">🔧</div>
+          <div class="eff-title">Maintenance Interval Extension</div>
+          <div class="eff-metric">3–5×</div>
+          <div class="eff-desc">Fewer consumables, no solvent systems, no air handling for fume extraction. The maintenance profile of a powder system is fundamentally simpler.</div>
+        </div>
+        <div class="efficiency-card">
+          <div class="eff-icon">📋</div>
+          <div class="eff-title">Compliance Documentation</div>
+          <div class="eff-metric">Automated</div>
+          <div class="eff-desc">PLC data logging generates EPA-audit-ready compliance records automatically. No manual logbooks. No compliance gaps.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ROI CALCULATOR ======================== -->
+  <section class="roi-section" id="roi-calculator">
+    <div class="container">
+      <div class="section-label">Interactive Tool</div>
+      <h2 class="section-title">ROI <span class="orange">Calculator</span></h2>
+      <p class="section-sub">
+        Enter your current operation's data. Results update in real time. All figures are
+        conservative — actual performance typically exceeds these projections.
+      </p>
+
+      <div class="roi-container">
+        <!-- FORM -->
+        <div class="roi-form">
+          <h3>// Your Operation — Input Data</h3>
+
+          <div class="field-group">
+            <label>Annual Parts Volume (units/year)</label>
+            <input type="number" id="roi-volume" value="50000" min="1000" step="1000">
+          </div>
+          <div class="field-group">
+            <label>Current Annual Liquid Coating Cost ($)</label>
+            <input type="number" id="roi-liquid-cost" value="180000" min="10000" step="1000">
+          </div>
+          <div class="field-group">
+            <label>Current Regulatory Compliance Cost ($/year)</label>
+            <input type="number" id="roi-compliance-cost" value="35000" min="0" step="1000">
+          </div>
+          <div class="field-group">
+            <label>Current Waste Disposal Cost ($/year)</label>
+            <input type="number" id="roi-waste-cost" value="22000" min="0" step="500">
+          </div>
+          <div class="field-group">
+            <label>Estimated System Investment ($)</label>
+            <input type="number" id="roi-investment" value="450000" min="50000" step="10000">
+          </div>
+          <div class="field-group">
+            <label>Operation Type</label>
+            <select id="roi-type">
+              <option value="batch">Batch Processing (Manual Load)</option>
+              <option value="conveyor">Conveyor Line (Semi-Auto)</option>
+              <option value="automated">Fully Automated Line</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" onclick="calcROI()">
+            Calculate My ROI
+          </button>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="roi-results">
+          <div class="roi-card">
+            <div class="roi-card-header">// Projected Annual Savings</div>
+            <div class="roi-metric-grid">
+              <div class="roi-metric">
+                <div class="roi-metric-value" id="res-material">$72,000</div>
+                <div class="roi-metric-label">Material Cost Savings</div>
+              </div>
+              <div class="roi-metric">
+                <div class="roi-metric-value" id="res-compliance">$35,000</div>
+                <div class="roi-metric-label">Compliance Savings</div>
+              </div>
+              <div class="roi-metric">
+                <div class="roi-metric-value" id="res-waste">$20,000</div>
+                <div class="roi-metric-label">Waste Disposal Savings</div>
+              </div>
+              <div class="roi-metric">
+                <div class="roi-metric-value" id="res-total">$127,000</div>
+                <div class="roi-metric-label">Total Annual Savings</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roi-card">
+            <div class="roi-card-header">// Payback &amp; Return Metrics</div>
+            <div style="padding: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
+                <div>
+                  <div style="font-family: 'Bebas Neue', display; font-size: 2.5rem; color: var(--orange); line-height: 1;" id="res-payback">3.5</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray);">Year Payback Period</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-family: 'Bebas Neue', display; font-size: 2.5rem; color: var(--orange); line-height: 1;" id="res-5yr-roi">182%</div>
+                  <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray);">5-Year ROI</div>
+                </div>
+              </div>
+              <div class="payback-bar-wrap" style="padding: 0;">
+                <div class="payback-label">
+                  <span>Year 1</span>
+                  <span id="res-payback-label">Break-even: Year 3.5</span>
+                  <span>Year 5</span>
+                </div>
+                <div class="payback-bar" style="margin-top: 0.5rem;">
+                  <div class="payback-fill" id="payback-fill" style="width: 70%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roi-card">
+            <div class="roi-card-header">// 10-Year Compliance Penalty Avoidance</div>
+            <div style="padding: 1.25rem;">
+              <div style="font-family: 'Bebas Neue', display; font-size: 2rem; color: var(--white); line-height: 1; margin-bottom: 0.4rem;" id="res-penalty">$350,000+</div>
+              <div style="font-size: 0.82rem; color: var(--gray); line-height: 1.6;">
+                Estimated EPA/OSHA penalty exposure avoided over 10 years by operating a compliant
+                powder system from 2026 forward. This figure does not include operational shutdown costs.
+              </div>
+            </div>
+          </div>
+
+          <p class="roi-disclaimer">
+            * All projections are conservative estimates based on industry benchmark data.
+            Actual results depend on facility-specific variables. Contact us for a
+            facility-specific analysis at no cost.
+          </p>
+
+          <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; text-align: center; display: block;">
+            Get a Facility-Specific Analysis →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== BUILD YOUR OWN OVEN ======================== -->
+  <section class="byo-section" id="byo-oven">
+    <div class="container">
+      <div class="section-label">Interactive Configuration Tool</div>
+      <h2 class="section-title">Build Your <span class="orange">Own Oven</span></h2>
+      <p class="section-sub">
+        Configure your baseline system. Each selection feeds directly into our engineering
+        team's quote workflow. No generic pricing — every response is facility-specific.
+      </p>
+
+      <div class="byo-container">
+        <!-- Step tabs -->
+        <div class="byo-steps" id="byoSteps">
+          <div class="byo-step-tab active" data-step="1">
+            <span class="step-num">01</span>Dimensions
+          </div>
+          <div class="byo-step-tab" data-step="2">
+            <span class="step-num">02</span>Heat Source
+          </div>
+          <div class="byo-step-tab" data-step="3">
+            <span class="step-num">03</span>Conveyor System
+          </div>
+          <div class="byo-step-tab" data-step="4">
+            <span class="step-num">04</span>Controls
+          </div>
+          <div class="byo-step-tab" data-step="5">
+            <span class="step-num">05</span>Review &amp; Submit
+          </div>
+        </div>
+
+        <!-- Step 1: Dimensions -->
+        <div class="byo-panel active" id="step-1">
+          <div class="byo-panel-title">Oven Dimensions</div>
+          <p style="font-size: 0.88rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.6;">
+            Enter the minimum internal clear dimensions required for your largest part profile.
+            Our engineers will add appropriate clearances, plenum depth, and door swing.
+          </p>
+          <div class="dimension-inputs">
+            <div class="field-group">
+              <label>Internal Width (feet)</label>
+              <input type="number" id="dim-w" value="8" min="4" max="40" step="0.5" onchange="updateConfig()">
+            </div>
+            <div class="field-group">
+              <label>Internal Height (feet)</label>
+              <input type="number" id="dim-h" value="8" min="4" max="24" step="0.5" onchange="updateConfig()">
+            </div>
+            <div class="field-group">
+              <label>Internal Depth (feet)</label>
+              <input type="number" id="dim-d" value="10" min="4" max="60" step="0.5" onchange="updateConfig()">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display:block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem;">Number of Door Openings</label>
+            <div class="option-grid" style="grid-template-columns: repeat(4, 1fr);">
+              <div class="option-card selected" data-group="doors" data-val="1" onclick="selectOption(this,'doors')">
+                <div class="option-name">1 Door</div>
+                <div class="option-desc">Batch / Walk-in</div>
+              </div>
+              <div class="option-card" data-group="doors" data-val="2" onclick="selectOption(this,'doors')">
+                <div class="option-name">2 Doors</div>
+                <div class="option-desc">Pass-through</div>
+              </div>
+              <div class="option-card" data-group="doors" data-val="3" onclick="selectOption(this,'doors')">
+                <div class="option-name">3 Doors</div>
+                <div class="option-desc">Multi-entry</div>
+              </div>
+              <div class="option-card" data-group="doors" data-val="Open" onclick="selectOption(this,'doors')">
+                <div class="option-name">Open Ends</div>
+                <div class="option-desc">Conveyor-through</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="byo-nav">
+            <div></div>
+            <button class="btn btn-primary" onclick="byoNext(2)">Next: Heat Source →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Heat Source -->
+        <div class="byo-panel" id="step-2">
+          <div class="byo-panel-title">Heat Source Selection</div>
+          <div class="option-grid">
+            <div class="option-card selected" data-group="heat" data-val="Natural Gas" onclick="selectOption(this,'heat')">
+              <div class="option-icon">🔥</div>
+              <div class="option-name">Natural Gas</div>
+              <div class="option-desc">Lowest operating cost. Requires gas service.</div>
+            </div>
+            <div class="option-card" data-group="heat" data-val="Electric" onclick="selectOption(this,'heat')">
+              <div class="option-icon">⚡</div>
+              <div class="option-name">Electric</div>
+              <div class="option-desc">Zero combustion. Clean room compatible.</div>
+            </div>
+            <div class="option-card" data-group="heat" data-val="Dual-Fuel" onclick="selectOption(this,'heat')">
+              <div class="option-icon">⚙</div>
+              <div class="option-name">Dual-Fuel</div>
+              <div class="option-desc">Gas primary / electric backup. Maximum uptime.</div>
+            </div>
+            <div class="option-card" data-group="heat" data-val="Infrared + Convection" onclick="selectOption(this,'heat')">
+              <div class="option-icon">◉</div>
+              <div class="option-name">IR + Convection</div>
+              <div class="option-desc">Fastest ramp. Ideal for high-mass parts.</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <label style="display:block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem;">Max Operating Temperature</label>
+            <div class="option-grid" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="option-card" data-group="temp" data-val="400°F" onclick="selectOption(this,'temp')">
+                <div class="option-name">400°F</div>
+                <div class="option-desc">Standard powder cure</div>
+              </div>
+              <div class="option-card selected" data-group="temp" data-val="500°F" onclick="selectOption(this,'temp')">
+                <div class="option-name">500°F</div>
+                <div class="option-desc">High-performance cure</div>
+              </div>
+              <div class="option-card" data-group="temp" data-val="550°F" onclick="selectOption(this,'temp')">
+                <div class="option-name">550°F</div>
+                <div class="option-desc">Ceramic / specialty powder</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="byo-nav">
+            <button class="btn btn-ghost" onclick="byoNext(1)">← Back</button>
+            <button class="btn btn-primary" onclick="byoNext(3)">Next: Conveyor System →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Conveyor -->
+        <div class="byo-panel" id="step-3">
+          <div class="byo-panel-title">Conveyor &amp; Loading System</div>
+          <div class="option-grid">
+            <div class="option-card selected" data-group="conveyor" data-val="Batch (Manual)" onclick="selectOption(this,'conveyor')">
+              <div class="option-icon">🚪</div>
+              <div class="option-name">Batch Manual</div>
+              <div class="option-desc">Cart-in / rack-in loading. Lowest capital cost.</div>
+            </div>
+            <div class="option-card" data-group="conveyor" data-val="Overhead Monorail" onclick="selectOption(this,'conveyor')">
+              <div class="option-icon">🔗</div>
+              <div class="option-name">Overhead Monorail</div>
+              <div class="option-desc">Continuous production flow. Fixed path.</div>
+            </div>
+            <div class="option-card" data-group="conveyor" data-val="Power-and-Free" onclick="selectOption(this,'conveyor')">
+              <div class="option-icon">⟳</div>
+              <div class="option-name">Power-and-Free</div>
+              <div class="option-desc">Variable speed. Accumulation capability. Maximum flexibility.</div>
+            </div>
+            <div class="option-card" data-group="conveyor" data-val="Floor Conveyor" onclick="selectOption(this,'conveyor')">
+              <div class="option-icon">▬</div>
+              <div class="option-name">Floor Conveyor</div>
+              <div class="option-desc">Heavy part handling. Fixtures on trolleys.</div>
+            </div>
+          </div>
+          <div class="byo-nav">
+            <button class="btn btn-ghost" onclick="byoNext(2)">← Back</button>
+            <button class="btn btn-primary" onclick="byoNext(4)">Next: Controls →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Controls -->
+        <div class="byo-panel" id="step-4">
+          <div class="byo-panel-title">Control System</div>
+          <div class="option-grid">
+            <div class="option-card" data-group="controls" data-val="Basic PID" onclick="selectOption(this,'controls')">
+              <div class="option-icon">🌡</div>
+              <div class="option-name">Basic PID</div>
+              <div class="option-desc">Temperature control only. Lowest cost.</div>
+            </div>
+            <div class="option-card selected" data-group="controls" data-val="PLC + HMI" onclick="selectOption(this,'controls')">
+              <div class="option-icon">📟</div>
+              <div class="option-name">PLC + HMI</div>
+              <div class="option-desc">Full touchscreen control. Recipe storage. Data logging.</div>
+            </div>
+            <div class="option-card" data-group="controls" data-val="PLC + SCADA" onclick="selectOption(this,'controls')">
+              <div class="option-icon">🖥</div>
+              <div class="option-name">PLC + SCADA</div>
+              <div class="option-desc">Remote monitoring. Multi-zone. MES integration ready.</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <label style="display:block; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.75rem;">Add-On Options</label>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 2px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--border)'">
+                <input type="checkbox" id="addon-logging" style="accent-color: var(--orange); width: 16px; height: 16px;" onchange="updateConfig()">
+                <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600;">Automated EPA Compliance Data Logging</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 2px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--border)'">
+                <input type="checkbox" id="addon-remote" style="accent-color: var(--orange); width: 16px; height: 16px;" onchange="updateConfig()">
+                <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600;">Remote Access / Mobile Monitoring</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 2px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--border)'">
+                <input type="checkbox" id="addon-alarm" style="accent-color: var(--orange); width: 16px; height: 16px;" onchange="updateConfig()">
+                <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600;">SMS / Email Fault Alarm System</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="byo-nav">
+            <button class="btn btn-ghost" onclick="byoNext(3)">← Back</button>
+            <button class="btn btn-primary" onclick="byoNext(5)">Review Configuration →</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Review -->
+        <div class="byo-panel" id="step-5">
+          <div class="byo-panel-title">Configuration Summary</div>
+          <p style="font-size: 0.88rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.6;">
+            Review your selections below. Submit this configuration and our engineering team will
+            contact you within one business day with a facility-specific quote and technical drawings.
+          </p>
+
+          <div class="config-summary" id="configSummary">
+            <h4>// Your System Configuration — CCL-PCO-CUSTOM</h4>
+            <div class="config-item"><span class="config-key">Internal Dimensions</span><span class="config-val" id="cfg-dims">8W × 8H × 10D ft</span></div>
+            <div class="config-item"><span class="config-key">Door Configuration</span><span class="config-val" id="cfg-doors">1 Door (Batch)</span></div>
+            <div class="config-item"><span class="config-key">Heat Source</span><span class="config-val" id="cfg-heat">Natural Gas</span></div>
+            <div class="config-item"><span class="config-key">Max Temperature</span><span class="config-val" id="cfg-temp">500°F</span></div>
+            <div class="config-item"><span class="config-key">Conveyor / Loading</span><span class="config-val" id="cfg-conveyor">Batch (Manual)</span></div>
+            <div class="config-item"><span class="config-key">Control System</span><span class="config-val" id="cfg-controls">PLC + HMI</span></div>
+            <div class="config-item"><span class="config-key">Add-On Options</span><span class="config-val" id="cfg-addons">None selected</span></div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="field-group" style="margin: 0;">
+              <label>Your Name</label>
+              <input type="text" id="byo-name" placeholder="Full name">
+            </div>
+            <div class="field-group" style="margin: 0;">
+              <label>Company</label>
+              <input type="text" id="byo-company" placeholder="Company name">
+            </div>
+            <div class="field-group" style="margin: 0;">
+              <label>Email Address</label>
+              <input type="email" id="byo-email" placeholder="email@company.com">
+            </div>
+            <div class="field-group" style="margin: 0;">
+              <label>Phone Number</label>
+              <input type="tel" id="byo-phone" placeholder="(xxx) xxx-xxxx">
+            </div>
+          </div>
+
+          <div class="byo-nav">
+            <button class="btn btn-ghost" onclick="byoNext(4)">← Back</button>
+            <button class="btn btn-primary btn-lg" onclick="submitBYO()">Submit for Engineering Quote →</button>
+          </div>
+
+          <div class="form-success" id="byo-success">
+            ✓ Configuration submitted. Our engineering team will respond within 1 business day with your custom quote and technical drawings.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== VR TOOL ======================== -->
+  <section class="vr-section" id="vr-tool">
+    <div class="container">
+      <div class="section-label">Immersive Preview Technology</div>
+      <h2 class="section-title">See It In <span class="orange">Your Shop</span></h2>
+      <p class="section-sub">
+        Our augmented reality preview tool places your configured system directly into your
+        facility floor plan. Currently in final development — notify list below.
+      </p>
+
+      <div class="vr-placeholder">
+        <div class="vr-screen">
+          <div class="vr-corner tl"></div>
+          <div class="vr-corner tr"></div>
+          <div class="vr-corner bl"></div>
+          <div class="vr-corner br"></div>
+          <div class="vr-badge">Coming Q2 2026</div>
+          <div class="vr-icon">◉</div>
+          <div class="vr-title">AR SHOP PREVIEW</div>
+          <div class="vr-sub">// Upload your facility floor plan → See your configured system in situ</div>
+          <p style="font-size: 0.82rem; color: var(--gray-dark); max-width: 420px; text-align: center; line-height: 1.6; margin-top: 0.5rem;">
+            Point your device at any floor area in your facility and see your custom-configured
+            cure oven rendered to scale in real-time augmented reality.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <input
+              type="email"
+              placeholder="Email — notify me when live"
+              style="padding: 0.65rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid var(--border-mid); border-radius: 2px; color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; width: 260px;"
+              id="vr-email"
+            >
+            <button class="btn btn-ghost btn-sm" onclick="notifyVR()">Notify Me</button>
+          </div>
+          <div id="vr-confirm" style="font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--orange); letter-spacing: 0.2em; margin-top: 0.5rem; display: none;">✓ Added to AR preview waitlist</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== COMING SOON ======================== -->
+  <section class="coming-soon-section" id="coming-soon">
+    <div class="container">
+      <div class="section-label">Expanding Catalog — 2025–2026</div>
+      <h2 class="section-title">More Systems. <span class="orange">Coming Soon.</span></h2>
+      <p class="section-sub">
+        Our flagship cure oven is the first in a complete powder coating system line.
+        The following product categories are in active engineering development.
+      </p>
+
+      <div class="cs-grid">
+
+        <!-- Booths -->
+        <div class="cs-card" id="booths">
+          <div class="cs-badge">// In Engineering Development</div>
+          <div class="cs-title">Flagship Powder Coating Booths</div>
+          <div class="cs-desc">
+            Engineered spray application booths with integrated powder recovery, grounding systems,
+            and application equipment specification. Designed in tandem with your cure oven for
+            complete system airflow balance. Cross-draft, downdraft, and side-draft configurations.
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Cross-Draft</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Downdraft</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Recovery System</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">NFPA 33</span>
+          </div>
+          <div class="cs-notify" style="position: relative; z-index: 1;">
+            <input type="email" placeholder="Notify me when available" id="notify-booths">
+            <button onclick="notifyMe('booths')">Notify Me When Available</button>
+            <div id="confirm-booths" style="display:none; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; margin-top: 0.4rem;">✓ Added to waitlist</div>
+          </div>
+        </div>
+
+        <!-- Racking -->
+        <div class="cs-card" id="racking">
+          <div class="cs-badge">// In Engineering Development</div>
+          <div class="cs-title">Custom Parts Racking Systems</div>
+          <div class="cs-desc">
+            Part-specific rack and fixture engineering eliminates coating shadows, maximizes oven
+            density, and ensures every surface receives correct coverage. Racking is not an
+            afterthought — it is a core engineering discipline that drives coating quality.
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Part-Specific</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Conveyor-Ready</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Grounding Assured</span>
+          </div>
+          <div class="cs-notify" style="position: relative; z-index: 1;">
+            <input type="email" placeholder="Notify me when available" id="notify-racking">
+            <button onclick="notifyMe('racking')">Notify Me When Available</button>
+            <div id="confirm-racking" style="display:none; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; margin-top: 0.4rem;">✓ Added to waitlist</div>
+          </div>
+        </div>
+
+        <!-- Parts Washing -->
+        <div class="cs-card" id="washing">
+          <div class="cs-badge">// In Engineering Development</div>
+          <div class="cs-title">Advanced Parts Washing Systems</div>
+          <div class="cs-desc">
+            Pre-treatment is 80% of coating quality. Our parts washing systems are engineered to
+            match your substrate, contamination profile, and throughput — not purchased from a
+            catalog. Iron phosphate, zinc phosphate, and nano-ceramic pre-treatment systems available.
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Iron Phosphate</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Zinc Phosphate</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Nano-Ceramic</span>
+            <span style="font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--gray-dark); letter-spacing: 0.15em; background: var(--bg-3); padding: 0.2rem 0.5rem; border-radius: 2px;">Rohner Chemistry</span>
+          </div>
+          <div class="cs-notify" style="position: relative; z-index: 1;">
+            <input type="email" placeholder="Notify me when available" id="notify-washing">
+            <button onclick="notifyMe('washing')">Notify Me When Available</button>
+            <div id="confirm-washing" style="display:none; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; margin-top: 0.4rem;">✓ Added to waitlist</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Consummate Consulting LLC</div>
+          <p class="footer-tagline">The Architects of the Next Generation<br>of American Metal Finishing</p>
+          <p class="footer-phone"><a href="tel:5039747141">503-974-7141 ext. 800</a></p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="catalog.html">Catalog</a>
+          <a href="about.html">Mission</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Catalog</h4>
+          <a href="#flagship-oven">Flagship Cure Oven</a>
+          <a href="#roi-calculator">ROI Calculator</a>
+          <a href="#byo-oven">Build Your Own</a>
+          <a href="#coming-soon">Coming Soon</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Location</h4>
+          <p>Pacific Northwest</p>
+          <p style="margin-top: 0.5rem;">Rohner Partner Facility<br>Vancouver, WA</p>
+          <p style="margin-top: 0.75rem;"><a href="mailto:info@consummatecon.com" style="color: var(--orange); font-family: var(--font-cond); font-weight: 700; font-size: 0.9rem;">info@consummatecon.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <p>&copy; 2025 Consummate Consulting LLC. All rights reserved.</p>
+        <p class="footer-tag">Industrial Systems Architects &nbsp;///&nbsp; Pacific Northwest</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- NAV ----
+    const toggle = document.getElementById('navToggle');
+    const nav    = document.getElementById('siteNav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) nav.classList.remove('open');
+    });
+
+    // ---- BYO STATE ----
+    const config = {
+      dims:     { w: 8, h: 8, d: 10 },
+      doors:    '1 Door',
+      heat:     'Natural Gas',
+      temp:     '500°F',
+      conveyor: 'Batch (Manual)',
+      controls: 'PLC + HMI',
+      addons:   []
+    };
+
+    function selectOption(el, group) {
+      document.querySelectorAll(`[data-group="${group}"]`).forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      config[group] = el.dataset.val;
+      updateConfig();
+    }
+
+    function updateConfig() {
+      config.dims.w = parseFloat(document.getElementById('dim-w').value) || 8;
+      config.dims.h = parseFloat(document.getElementById('dim-h').value) || 8;
+      config.dims.d = parseFloat(document.getElementById('dim-d').value) || 10;
+      const addons = [];
+      if (document.getElementById('addon-logging')?.checked) addons.push('EPA Data Logging');
+      if (document.getElementById('addon-remote')?.checked)  addons.push('Remote Monitoring');
+      if (document.getElementById('addon-alarm')?.checked)   addons.push('Fault Alarm System');
+      config.addons = addons;
+      // Update summary
+      document.getElementById('cfg-dims').textContent     = `${config.dims.w}W × ${config.dims.h}H × ${config.dims.d}D ft`;
+      document.getElementById('cfg-doors').textContent    = config.doors;
+      document.getElementById('cfg-heat').textContent     = config.heat;
+      document.getElementById('cfg-temp').textContent     = config.temp;
+      document.getElementById('cfg-conveyor').textContent = config.conveyor;
+      document.getElementById('cfg-controls').textContent = config.controls;
+      document.getElementById('cfg-addons').textContent   = config.addons.length ? config.addons.join(', ') : 'None selected';
+    }
+
+    function byoNext(step) {
+      document.querySelectorAll('.byo-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.byo-step-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(`step-${step}`).classList.add('active');
+      document.querySelector(`[data-step="${step}"]`).classList.add('active');
+      updateConfig();
+      document.getElementById('byo-oven').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Step tab clicks
+    document.querySelectorAll('.byo-step-tab').forEach(tab => {
+      tab.addEventListener('click', () => byoNext(parseInt(tab.dataset.step)));
+    });
+
+    function submitBYO() {
+      const name    = document.getElementById('byo-name').value.trim();
+      const email   = document.getElementById('byo-email').value.trim();
+      if (!name || !email) { alert('Please provide your name and email address.'); return; }
+      document.getElementById('byo-success').classList.add('show');
+      document.querySelector('[onclick="submitBYO()"]').disabled = true;
+    }
+
+    // ---- ROI CALCULATOR ----
+    function calcROI() {
+      const liquidCost     = parseFloat(document.getElementById('roi-liquid-cost').value)     || 0;
+      const complianceCost = parseFloat(document.getElementById('roi-compliance-cost').value) || 0;
+      const wasteCost      = parseFloat(document.getElementById('roi-waste-cost').value)      || 0;
+      const investment     = parseFloat(document.getElementById('roi-investment').value)      || 1;
+      const type           = document.getElementById('roi-type').value;
+
+      // Conservative savings factors
+      const matFactor  = type === 'automated' ? 0.45 : type === 'conveyor' ? 0.40 : 0.35;
+      const compFactor = 1.0;
+      const wasteFactor = 0.92;
+
+      const matSavings  = Math.round(liquidCost * matFactor);
+      const compSavings = Math.round(complianceCost * compFactor);
+      const wasteSavings = Math.round(wasteCost * wasteFactor);
+      const totalSavings = matSavings + compSavings + wasteSavings;
+
+      const payback = totalSavings > 0 ? (investment / totalSavings) : 99;
+      const fiveYrROI = totalSavings > 0 ? Math.round(((totalSavings * 5 - investment) / investment) * 100) : 0;
+      const fillPct = Math.min(Math.max(100 - (payback / 10 * 100), 20), 95);
+
+      document.getElementById('res-material').textContent    = '$' + matSavings.toLocaleString();
+      document.getElementById('res-compliance').textContent  = '$' + compSavings.toLocaleString();
+      document.getElementById('res-waste').textContent       = '$' + wasteSavings.toLocaleString();
+      document.getElementById('res-total').textContent       = '$' + totalSavings.toLocaleString();
+      document.getElementById('res-payback').textContent     = payback < 99 ? payback.toFixed(1) : 'N/A';
+      document.getElementById('res-5yr-roi').textContent     = fiveYrROI > 0 ? fiveYrROI + '%' : 'N/A';
+      document.getElementById('res-payback-label').textContent = `Break-even: Year ${payback.toFixed(1)}`;
+      document.getElementById('payback-fill').style.width    = fillPct + '%';
+      document.getElementById('res-penalty').textContent     = '$' + (Math.round(complianceCost * 10 * 1.25)).toLocaleString() + '+';
+    }
+
+    // ---- NOTIFY ME ----
+    function notifyMe(section) {
+      const input   = document.getElementById(`notify-${section}`);
+      const confirm = document.getElementById(`confirm-${section}`);
+      if (!input.value.trim()) { input.focus(); return; }
+      confirm.style.display = 'block';
+      input.value = '';
+    }
+    function notifyVR() {
+      const input = document.getElementById('vr-email');
+      if (!input.value.trim()) { input.focus(); return; }
+      document.getElementById('vr-confirm').style.display = 'block';
+      input.value = '';
+    }
+
+    // ---- INIT ----
+    updateConfig();
+
+    // Image fallback trigger
+    window.addEventListener('load', () => {
+      const img = document.querySelector('#plenumWrap img');
+      if (img && !img.complete) img.dispatchEvent(new Event('error'));
+    });
+  </script>
+</body>
+</html>

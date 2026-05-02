@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission & Process Architecture | Consummate Consulting LLC</title>
+  <meta name="description" content="Full-spectrum workflow optimization, data-driven process analysis, and 10-year VOC compliance roadmaps for American metal finishing operations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   CONSUMMATE CONSULTING LLC — GLOBAL DESIGN SYSTEM
+   Industrial / Safety Orange / Carbon Black
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Share+Tech+Mono&display=swap');
+
+/* ---- CSS VARIABLES ---- */
+:root {
+  --orange:       #FF4D00;
+  --orange-dark:  #CC3D00;
+  --orange-dim:   rgba(255, 77, 0, 0.12);
+  --orange-glow:  rgba(255, 77, 0, 0.25);
+  --bg-0:         #080808;
+  --bg-1:         #0F0F0F;
+  --bg-2:         #151515;
+  --bg-3:         #1C1C1C;
+  --bg-4:         #232323;
+  --bg-card:      #191919;
+  --border:       #2A2A2A;
+  --border-mid:   #333333;
+  --white:        #FFFFFF;
+  --off-white:    #E8E8E8;
+  --gray-light:   #BBBBBB;
+  --gray:         #888888;
+  --gray-dark:    #555555;
+  --header-bg:    #FFFFFF;
+  --header-bdr:   #FF4D00;
+  --header-h:     88px;
+  --radius:       2px;
+  --font-display: 'Bebas Neue', display;
+  --font-cond:    'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+input, textarea, select { font: inherit; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-1);
+  color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--header-bg);
+  border-bottom: 5px solid var(--header-bdr);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Centered logo */
+.header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 1;
+}
+.header-logo img {
+  max-height: 100px;
+  width: auto;
+}
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.logo-primary {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: #0A0A0A;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.logo-accent {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  margin: 2px 0;
+}
+.logo-sub {
+  font-family: var(--font-cond);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Nav left */
+.site-nav {
+  display: flex;
+  gap: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+.site-nav a {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.18s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.2s ease;
+}
+.site-nav a:hover,
+.site-nav a.active { color: var(--orange); }
+.site-nav a:hover::after,
+.site-nav a.active::after { width: 100%; }
+
+/* Phone right */
+.header-phone {
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: color 0.18s;
+}
+.header-phone:hover { color: var(--orange); }
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #1A1A1A;
+  transition: all 0.3s;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
+}
+.btn-primary:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px var(--orange-glow);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--border-mid);
+}
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+}
+.btn-ghost:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+.btn-lg { padding: 1.1rem 2.8rem; font-size: 1.05rem; }
+.btn-sm { padding: 0.55rem 1.3rem; font-size: 0.8rem; }
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.container--wide { max-width: 1440px; }
+
+.section {
+  padding: 6rem 0;
+}
+.section--sm { padding: 3.5rem 0; }
+.section--lg { padding: 9rem 0; }
+
+.section-label {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--gray-light);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.orange { color: var(--orange); }
+.text-gray { color: var(--gray); }
+.text-mono { font-family: var(--font-mono); }
+
+/* Grid helpers */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* Divider */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 4rem 0;
+}
+.divider--orange {
+  background: linear-gradient(90deg, var(--orange), transparent);
+}
+
+/* ============================================================
+   HERO (index.html)
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-0);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(255,77,0,0.04) 59px,
+      rgba(255,77,0,0.04) 60px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(255,77,0,0.04) 59px,
+      rgba(255,77,0,0.04) 60px
+    ),
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255,77,0,0.07) 0%, transparent 70%),
+    var(--bg-0);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(8,8,8,0.95) 35%, rgba(8,8,8,0.4) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem 4rem;
+  max-width: 860px;
+  margin-left: max(2rem, calc((100vw - 1200px) / 2 + 2rem));
+}
+
+.hero-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-badge::before {
+  content: '▶';
+  font-size: 0.5rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Ticker */
+.hero-ticker {
+  position: relative;
+  z-index: 2;
+  background: var(--orange);
+  padding: 0.65rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+}
+.ticker-inner span {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--white);
+  padding-right: 0;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   HOME — THE PROBLEM
+   ============================================================ */
+.problem-section {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.problem-text p {
+  color: var(--gray-light);
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+.stat-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-label {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Compliance timeline card */
+.compliance-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.compliance-header {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  padding: 1rem 1.5rem;
+  background: rgba(255,77,0,0.06);
+  border-bottom: 1px solid var(--border);
+}
+.timeline-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-item:hover { background: var(--bg-3); }
+
+.tl-year {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gray-dark);
+  min-width: 56px;
+  flex-shrink: 0;
+}
+.timeline-item.active   .tl-year { color: var(--gray-light); }
+.timeline-item.warning  .tl-year { color: #FFB800; }
+.timeline-item.danger   .tl-year { color: var(--orange); }
+
+.tl-event {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.timeline-item.active  .tl-event { color: var(--gray-light); }
+.timeline-item.warning .tl-event { color: var(--off-white); }
+.timeline-item.danger  .tl-event { color: var(--white); }
+
+/* ============================================================
+   HOME — THE MOAT
+   ============================================================ */
+.moat-section {
+  background: var(--bg-1);
+}
+.moat-callout {
+  margin: 2rem 0 3rem;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--orange);
+  background: var(--orange-dim);
+}
+.moat-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.moat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.moat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.moat-card:hover { border-color: var(--border-mid); transform: translateY(-3px); }
+.moat-card:hover::before { transform: scaleX(1); }
+.moat-icon {
+  font-size: 1.5rem;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+.moat-card h3 {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.moat-card p {
+  font-size: 0.92rem;
+  color: var(--gray-light);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band {
+  background: var(--bg-0);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,77,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-content {
+  text-align: center;
+  position: relative;
+}
+.cta-label {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.cta-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--bg-0);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.footer-tagline {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  line-height: 1.5;
+  max-width: 280px;
+  margin-bottom: 1rem;
+}
+.footer-phone a {
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.05em;
+}
+.footer-nav h4 {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.footer-nav a, .footer-contact p {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  transition: color 0.18s;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.footer-nav a:hover { color: var(--orange); }
+.footer-contact h4 {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.footer-bar p {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  color: var(--gray-dark);
+  letter-spacing: 0.05em;
+}
+.footer-tag { color: var(--gray-dark) !important; font-style: italic; }
+
+/* ============================================================
+   CATALOG PAGE
+   ============================================================ */
+.page-hero {
+  background: var(--bg-0);
+  padding: 5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg, transparent, transparent 79px,
+      rgba(255,77,0,0.03) 79px, rgba(255,77,0,0.03) 80px
+    );
+}
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.page-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+}
+.page-desc {
+  font-size: 1rem;
+  color: var(--gray-light);
+  max-width: 580px;
+  line-height: 1.75;
+}
+
+/* ---- FLAGSHIP OVEN ---- */
+.flagship-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+}
+
+.flagship-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.flagship-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.flagship-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+}
+.flagship-model {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--orange);
+  letter-spacing: 0.25em;
+  margin-bottom: 1.5rem;
+}
+.flagship-desc {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.spec-table {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.spec-row {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-key {
+  width: 45%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-cond);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray);
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+}
+.spec-val {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--bg-3);
+}
+
+/* Honeycomb plenum image area */
+.plenum-showcase {
+  position: sticky;
+  top: calc(var(--header-h) + 2rem);
+}
+.plenum-img-wrap {
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.plenum-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.plenum-img-wrap .img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+.plenum-img-wrap .img-placeholder svg {
+  width: 64px;
+  height: 64px;
+  opacity: 0.2;
+}
+.img-placeholder-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray-dark);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.img-caption {
+  padding: 0.85rem 1rem;
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  text-transform: uppercase;
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+/* ---- EFFICIENCY ENHANCEMENTS ---- */
+.efficiency-section {
+  background: var(--bg-2);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.efficiency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.efficiency-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.efficiency-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+.eff-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange-dim);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+.eff-title {
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.eff-metric {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.eff-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ---- ROI CALCULATOR ---- */
+.roi-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.roi-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.roi-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.roi-form h3 {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+.field-group {
+  margin-bottom: 1.25rem;
+}
+.field-group label {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.4rem;
+}
+.field-group input,
+.field-group select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+.field-group input::placeholder { color: var(--gray-dark); }
+
+.roi-results {
+  position: sticky;
+  top: calc(var(--header-h) + 2rem);
+}
+.roi-card {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.roi-card-header {
+  background: var(--orange);
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.roi-metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.roi-metric {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.roi-metric:nth-child(even) { border-right: none; }
+.roi-metric:nth-last-child(-n+2) { border-bottom: none; }
+.roi-metric-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.roi-metric-label {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Payback bar */
+.payback-bar-wrap {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.payback-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+.payback-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.payback-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.roi-disclaimer {
+  font-size: 0.75rem;
+  color: var(--gray-dark);
+  font-style: italic;
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+/* ---- BUILD YOUR OWN OVEN ---- */
+.byo-section {
+  background: var(--bg-2);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.byo-container {
+  margin-top: 3rem;
+}
+.byo-steps {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.byo-step-tab {
+  flex: 1;
+  padding: 0.85rem 0.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.byo-step-tab:last-child { border-right: none; }
+.byo-step-tab.active {
+  background: var(--orange);
+  color: var(--white);
+}
+.byo-step-tab .step-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: inherit;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.byo-panel {
+  display: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  animation: fadeIn 0.3s ease;
+}
+.byo-panel.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.byo-panel-title {
+  font-family: var(--font-cond);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.byo-panel-title::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--orange);
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.option-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  position: relative;
+}
+.option-card:hover { border-color: var(--border-mid); }
+.option-card.selected {
+  border-color: var(--orange);
+  background: var(--orange-dim);
+}
+.option-card.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.7rem;
+  color: var(--orange);
+  font-weight: 900;
+}
+.option-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.option-name {
+  font-family: var(--font-cond);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+.option-desc {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.dimension-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.byo-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+/* Config summary */
+.config-summary {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.config-summary h4 {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.config-item:last-child { border-bottom: none; }
+.config-key { color: var(--gray); font-family: var(--font-cond); font-weight: 600; }
+.config-val { color: var(--white); font-family: var(--font-cond); font-weight: 700; }
+
+/* ---- VR TOOL ---- */
+.vr-section {
+  background: var(--bg-0);
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+.vr-placeholder {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  margin-top: 2.5rem;
+}
+.vr-screen {
+  aspect-ratio: 16/6;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,77,0,0.08) 0%, transparent 70%),
+    var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.vr-icon {
+  font-size: 3.5rem;
+  opacity: 0.2;
+}
+.vr-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+.vr-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+.vr-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+}
+.vr-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--orange);
+  border-style: solid;
+  opacity: 0.4;
+}
+.vr-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.vr-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.vr-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.vr-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* ---- COMING SOON SECTIONS ---- */
+.coming-soon-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.cs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 280px;
+}
+.cs-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-diagonal-stripe;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,77,0,0.03) 8px,
+      rgba(255,77,0,0.03) 9px
+    );
+}
+.cs-badge {
+  display: inline-block;
+  background: var(--border);
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+.cs-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  opacity: 0.7;
+  position: relative;
+}
+.cs-desc {
+  font-size: 0.88rem;
+  color: var(--gray-dark);
+  line-height: 1.65;
+  position: relative;
+}
+.cs-notify {
+  margin-top: auto;
+  position: relative;
+}
+.cs-notify input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+.cs-notify input::placeholder { color: var(--gray-dark); }
+.cs-notify button {
+  width: 100%;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition: all 0.2s;
+}
+.cs-notify button:hover { border-color: var(--orange); color: var(--orange); cursor: pointer; }
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-intro {
+  background: var(--bg-1);
+  padding: 5rem 0;
+}
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.about-lead {
+  font-family: var(--font-cond);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.about-body {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+.about-values {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.value-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.value-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.value-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--orange);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+}
+.value-text h4 {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.value-text p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Process flow */
+.process-section {
+  background: var(--bg-2);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.process-flow {
+  margin-top: 3rem;
+  position: relative;
+}
+.process-flow::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--orange), rgba(255,77,0,0.1));
+}
+.process-step {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  position: relative;
+}
+.process-num {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--orange);
+  position: relative;
+  z-index: 1;
+}
+.process-content {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+.process-content h3 {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.process-content p {
+  font-size: 0.92rem;
+  color: var(--gray-light);
+  line-height: 1.75;
+}
+.process-tag {
+  display: inline-block;
+  background: var(--orange-dim);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  margin-top: 0.5rem;
+}
+
+/* Roadmap */
+.roadmap-section {
+  background: var(--bg-1);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+.roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.roadmap-phase {
+  padding: 1.5rem 1.25rem;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.roadmap-phase:last-child { border-right: none; }
+.rp-years {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.rp-title {
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.rp-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.rp-item {
+  font-size: 0.78rem;
+  color: var(--gray);
+  display: flex;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+.rp-item::before {
+  content: '—';
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.rp-active { background: rgba(255,77,0,0.04); }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-form-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+}
+.contact-form-wrap h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.form-sub {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-dim);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--gray-dark); }
+.form-group select { appearance: none; cursor: pointer; }
+.form-group textarea { resize: vertical; min-height: 140px; }
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.form-note {
+  font-size: 0.78rem;
+  color: var(--gray-dark);
+  font-style: italic;
+}
+
+/* Contact sidebar */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.cb-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+}
+.cb-value {
+  font-family: var(--font-cond);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+.cb-value a { color: var(--white); transition: color 0.18s; }
+.cb-value a:hover { color: var(--orange); }
+.cb-note {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+.partnership-block {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.partnership-block h4 {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+}
+.partnership-block p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SUCCESS / NOTIFICATION STATES
+   ============================================================ */
+.form-success {
+  display: none;
+  background: rgba(0, 180, 100, 0.1);
+  border: 1px solid rgba(0, 180, 100, 0.3);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  font-family: var(--font-cond);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #00B464;
+  margin-top: 1rem;
+}
+.form-success.show { display: block; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .problem-grid { grid-template-columns: 1fr; }
+  .flagship-grid { grid-template-columns: 1fr; }
+  .plenum-showcase { position: static; }
+  .roadmap-timeline { grid-template-columns: repeat(3, 1fr); }
+  .roadmap-phase:nth-child(3) { border-right: none; }
+  .roadmap-phase:nth-child(4) { border-top: 1px solid var(--border); }
+  .roadmap-phase:nth-child(5) { border-top: 1px solid var(--border); border-right: none; }
+  .roi-container { grid-template-columns: 1fr; }
+  .roi-results { position: static; }
+  .about-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --header-h: 70px; }
+
+  .site-nav { display: none; flex-direction: column; position: absolute; top: calc(100% + 5px); left: 0; background: var(--white); padding: 1rem 2rem; width: 200px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); border-radius: 0 0 4px 4px; gap: 1rem; }
+  .site-nav.open { display: flex; }
+  .nav-toggle { display: flex; }
+
+  .header-phone { display: none; }
+  .logo-primary { font-size: 1.4rem; }
+
+  .hero-content { padding: 3rem 1.5rem 2rem; }
+  .hero-headline { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+
+  .moat-grid { grid-template-columns: 1fr; }
+  .efficiency-grid { grid-template-columns: 1fr; }
+  .cs-grid { grid-template-columns: 1fr; }
+  .byo-steps { flex-wrap: wrap; }
+  .roadmap-timeline { grid-template-columns: 1fr 1fr; }
+  .roadmap-phase:nth-child(2) { border-right: none; }
+  .roadmap-phase:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+  .roadmap-phase:nth-child(5) { border-right: none; }
+  .stat-row { gap: 1.5rem; flex-wrap: wrap; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-flow::before { left: 27px; }
+  .dimension-inputs { grid-template-columns: 1fr; }
+  .roi-metric-grid { grid-template-columns: 1fr; }
+  .roi-metric { border-right: none !important; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 4rem 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .byo-step-tab { padding: 0.6rem 0.3rem; }
+  .btn-lg { padding: 0.9rem 1.8rem; font-size: 0.95rem; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ======================== HEADER ======================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="about.html" class="active">Mission</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-logo">
+        <div class="logo-wordmark">
+          <span class="logo-primary">CONSUMMATE</span>
+          <span class="logo-accent"></span>
+          <span class="logo-sub">Consulting LLC &nbsp;///&nbsp; Industrial Systems</span>
+        </div>
+      </div>
+      <a href="tel:5039747141" class="header-phone">503-974-7141 ext. 800</a>
+    </div>
+  </header>
+
+  <!-- ======================== PAGE HERO ======================== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-badge">// Mission Statement & Process Architecture</div>
+        <h1 class="page-title">We Don't Consult.<br><span class="orange">We Architect.</span></h1>
+        <p class="page-desc">
+          The Architects of the Next Generation of American Metal Finishing. That title carries
+          an obligation — to replace a broken, non-compliant industrial finishing model with
+          something engineered to last ten years and beyond.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT INTRO ======================== -->
+  <section class="about-intro" id="mission">
+    <div class="container">
+      <div class="section-label">Who We Are</div>
+      <div class="about-intro-grid">
+
+        <div>
+          <p class="about-lead">
+            Consummate Consulting LLC is a Pacific Northwest-based industrial systems architecture
+            firm specializing in the full-spectrum conversion of liquid finishing operations to
+            EPA-compliant powder coating systems.
+          </p>
+          <p class="about-body">
+            We were founded on a specific observation: the American metal finishing industry is
+            facing the most significant regulatory inflection point in a generation. The 2026–2027
+            EPA/OSHA VOC mandates are not a distant policy proposal — they are enforcement actions
+            with operational consequences. Facilities that wait will pay in penalties. Facilities
+            that react without a proper engineering foundation will pay in rework and downtime.
+          </p>
+          <p class="about-body">
+            Our answer is not a product catalog. It is a process. We begin with your facility's
+            production data, regulatory exposure, and physical constraints. We build from that
+            foundation upward — specifying equipment, designing workflows, selecting chemistry,
+            and producing the documentation chain that protects your operation from audit to audit.
+          </p>
+          <p class="about-body">
+            Our strategic partnership with Rohner in Vancouver, WA is the technical backbone of
+            everything we design. Rohner's powder chemistry expertise, combined with our equipment
+            engineering capability, means every system we build is specified by the team that
+            understands both the coating material and the process equipment simultaneously.
+            No other consulting firm in the Pacific Northwest can make that statement.
+          </p>
+          <div style="margin-top: 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.5rem; border: 1px solid var(--orange); border-radius: 2px; background: var(--orange-dim);">
+              <span style="font-family: var(--font-display); font-size: 1.1rem; color: var(--orange);">◈</span>
+              <span style="font-family: var(--font-cond); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white);">Rohner Partner — Vancouver, WA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-values">
+          <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--orange); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.5rem;">// Core Operating Principles</div>
+          <div class="value-item">
+            <div class="value-num">01</div>
+            <div class="value-text">
+              <h4>Engineering First</h4>
+              <p>Every engagement begins with data collection and facility analysis — never with a product catalog. We engineer solutions, we don't sell SKUs.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-num">02</div>
+            <div class="value-text">
+              <h4>Full Accountability</h4>
+              <p>One team owns your entire system — chemistry, equipment, installation, commissioning, and compliance documentation. No vendor finger-pointing.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-num">03</div>
+            <div class="value-text">
+              <h4>Compliance by Design</h4>
+              <p>EPA and OSHA compliance is not an add-on — it is a primary engineering constraint built into every specification we produce from day one.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-num">04</div>
+            <div class="value-text">
+              <h4>10-Year Horizon</h4>
+              <p>We build systems designed to remain compliant, productive, and economically optimal through the full 10-year projected regulatory cycle, not just today's requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== THE PROBLEM WE SOLVE ======================== -->
+  <section style="background: var(--bg-0); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 0;">
+    <div class="container">
+      <div class="section-label">The Hidden Cost Problem</div>
+      <h2 class="section-title">Data Collection Reveals<br><span class="orange">What Gut Instinct Misses.</span></h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start;">
+        <div>
+          <p style="font-size: 1rem; color: var(--gray-light); line-height: 1.8; margin-bottom: 1.25rem;">
+            In our facility audits, we have never encountered an operation that accurately knew its
+            true cost-per-part for liquid finishing. Not because their accounting is poor — but because
+            the hidden costs of liquid finishing are structurally invisible to standard P&amp;L reporting.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.8; margin-bottom: 1.25rem;">
+            Overspray waste. Solvent flash-off time buried in cycle time. Air handling energy for
+            VOC extraction. Regulatory compliance labor. Hazardous waste disposal contracts.
+            Fume exposure liability. OSHA recordable events tied to solvent handling. Rework rates
+            driven by application inconsistency.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.8;">
+            Our data collection methodology surfaces all of it — building a complete picture of your
+            true cost structure before we design a single piece of equipment. That analysis is the
+            foundation of every ROI projection and every equipment specification we produce.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px; overflow: hidden;">
+            <div style="background: rgba(255,77,0,0.08); padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.68rem; color: var(--orange); letter-spacing: 0.2em; text-transform: uppercase;">// Hidden Costs — Liquid Finishing Operations</div>
+            <div style="padding: 0;">
+              <div style="display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-family: var(--font-cond); font-size: 0.9rem;">
+                <span style="color: var(--gray);">Material Overspray Loss</span>
+                <span style="color: var(--white); font-weight: 700;">20–40% of Material</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-family: var(--font-cond); font-size: 0.9rem;">
+                <span style="color: var(--gray);">Solvent Flash-Off Idle Time</span>
+                <span style="color: var(--white); font-weight: 700;">8–15 min/cycle</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-family: var(--font-cond); font-size: 0.9rem;">
+                <span style="color: var(--gray);">Hazardous Waste Disposal</span>
+                <span style="color: var(--white); font-weight: 700;">$800–$2,400/mo</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-family: var(--font-cond); font-size: 0.9rem;">
+                <span style="color: var(--gray);">VOC Air Handling Energy</span>
+                <span style="color: var(--white); font-weight: 700;">Continuous Load</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-family: var(--font-cond); font-size: 0.9rem;">
+                <span style="color: var(--gray);">Regulatory Compliance Labor</span>
+                <span style="color: var(--white); font-weight: 700;">40–120 hrs/year</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.85rem 1.25rem; font-family: var(--font-cond); font-size: 0.9rem;">
+                <span style="color: var(--gray);">Rework Rate (Application)</span>
+                <span style="color: var(--orange); font-weight: 700;">Typically Unmeasured</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 1rem 1.25rem; background: var(--orange-dim); border: 1px solid var(--orange); border-radius: 2px; font-family: var(--font-cond); font-size: 0.88rem; font-weight: 600; color: var(--white); line-height: 1.6;">
+            ⚠ &nbsp;In a typical 50,000 parts/year operation, these hidden costs average
+            <strong style="color: var(--orange);">$85,000–$140,000 annually</strong> — never appearing as a single line item.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROCESS FLOW ======================== -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-label">How We Work</div>
+      <h2 class="section-title">The Full-Spectrum <span class="orange">Engagement Process</span></h2>
+      <p class="section-sub">
+        Every client engagement follows this architecture. No shortcuts. No skipped phases.
+        The sequence exists because each step's output is the next step's input.
+      </p>
+
+      <div class="process-flow">
+
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3>Facility Audit &amp; Data Collection</h3>
+            <p>
+              We spend time on your floor — not on a phone call. We collect production volume data,
+              part geometry profiles, substrate specifications, current cycle time measurements,
+              material usage records, utility cost data, and existing compliance documentation.
+              This is not a checklist. It is a forensic analysis of your finishing operation.
+            </p>
+            <span class="process-tag">On-site / 1–3 days</span>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3>Bottleneck Identification &amp; True Cost Analysis</h3>
+            <p>
+              Using the collected data, we build a complete process map that identifies every
+              production bottleneck, every hidden cost source, and every compliance exposure.
+              We quantify what you are actually spending on your current finishing operation —
+              including the costs your P&amp;L has never captured. This analysis becomes the
+              economic foundation for your system specification.
+            </p>
+            <span class="process-tag">Analytical phase / 5–10 business days</span>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3>System Architecture Design</h3>
+            <p>
+              With your production requirements and cost structure fully understood, we design
+              the complete system architecture: pre-treatment line, application booth configuration,
+              conveyor system, cure oven specification, exhaust and ventilation, electrical
+              requirements, and floor plan integration. Chemistry is specified in parallel through
+              our Rohner partnership — ensuring the coating material and the processing equipment
+              are designed as a unified system.
+            </p>
+            <span class="process-tag">Engineering phase / 10–20 business days</span>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-content">
+            <h3>Equipment Specification &amp; Procurement Architecture</h3>
+            <p>
+              We produce a complete equipment specification package — including technical drawings,
+              dimensional layouts, utility requirement schedules, and vendor qualification criteria.
+              We do not accept manufacturer proposals on your behalf without rigorous technical
+              review against our specification. Every piece of equipment must perform to the
+              engineering requirements we have established, or it does not enter the build.
+            </p>
+            <span class="process-tag">Specification phase / 5–15 business days</span>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">05</div>
+          <div class="process-content">
+            <h3>Installation Oversight &amp; Commissioning</h3>
+            <p>
+              We oversee installation, direct commissioning protocols, and conduct systematic
+              cure verification testing across your full part profile range. Temperature uniformity
+              surveys are performed and documented. First-article production runs are monitored
+              and recorded. The system does not go into production until it passes every
+              engineering acceptance criterion.
+            </p>
+            <span class="process-tag">On-site / varies by system scale</span>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">06</div>
+          <div class="process-content">
+            <h3>10-Year VOC Compliance Roadmap Delivery</h3>
+            <p>
+              Every engagement concludes with delivery of a documented 10-year VOC compliance
+              roadmap. This document covers your regulatory jurisdiction's enforcement timeline,
+              your system's compliance posture at each regulatory milestone, recommended
+              re-evaluation intervals, equipment lifecycle projections, and the data logging
+              protocols required for continuous audit readiness. This is not a certificate of
+              completion — it is a living operations document.
+            </p>
+            <span class="process-tag">Deliverable / standard with all full engagements</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 10-YEAR ROADMAP ======================== -->
+  <section class="roadmap-section" id="roadmap">
+    <div class="container">
+      <div class="section-label">Compliance Planning Framework</div>
+      <h2 class="section-title">Your 10-Year <span class="orange">VOC Roadmap</span></h2>
+      <p class="section-sub">
+        The regulatory landscape does not stand still after 2027. Our roadmap framework
+        plans through the full projected enforcement cycle.
+      </p>
+
+      <div class="roadmap-timeline">
+        <div class="roadmap-phase">
+          <div class="rp-years">2025–2026</div>
+          <div class="rp-title">Transition Phase</div>
+          <div class="rp-items">
+            <div class="rp-item">Facility audit completed</div>
+            <div class="rp-item">System architecture designed</div>
+            <div class="rp-item">Equipment procured &amp; installed</div>
+            <div class="rp-item">Liquid line decommissioned</div>
+          </div>
+        </div>
+        <div class="roadmap-phase rp-active">
+          <div class="rp-years">2026–2027</div>
+          <div class="rp-title">Phase I Compliance</div>
+          <div class="rp-items">
+            <div class="rp-item">EPA Phase I audit-ready</div>
+            <div class="rp-item">Zero VOC emissions documented</div>
+            <div class="rp-item">Data logging operational</div>
+            <div class="rp-item">Operator training complete</div>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="rp-years">2027–2029</div>
+          <div class="rp-title">Full Enforcement</div>
+          <div class="rp-items">
+            <div class="rp-item">Full OSHA compliance posture</div>
+            <div class="rp-item">System performance review</div>
+            <div class="rp-item">Capacity expansion planning</div>
+            <div class="rp-item">Chemistry re-optimization</div>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="rp-years">2029–2031</div>
+          <div class="rp-title">Re-evaluation Cycle</div>
+          <div class="rp-items">
+            <div class="rp-item">Anticipated OSHA re-evaluation</div>
+            <div class="rp-item">Equipment mid-life assessment</div>
+            <div class="rp-item">New substrate qualification</div>
+            <div class="rp-item">Process efficiency review</div>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="rp-years">2031–2035</div>
+          <div class="rp-title">Long-Range Horizon</div>
+          <div class="rp-items">
+            <div class="rp-item">Next-gen system planning</div>
+            <div class="rp-item">Automation integration</div>
+            <div class="rp-item">Fleet expansion roadmap</div>
+            <div class="rp-item">Regulatory cycle prep</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; padding: 1.5rem 2rem; border: 1px solid var(--border); border-left: 4px solid var(--orange); background: var(--bg-card); border-radius: 2px;">
+        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--orange); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;">// Roadmap Note</div>
+        <p style="font-size: 0.88rem; color: var(--gray); line-height: 1.7;">
+          Regulatory timelines are projections based on current EPA enforcement schedules and OSHA rulemaking cycles as of 2025.
+          All roadmaps are delivered with jurisdiction-specific appendices and reviewed annually as part of our ongoing client
+          relationship. Contact us at <a href="tel:5039747141" style="color: var(--orange); font-weight: 700;">503-974-7141 ext. 800</a> to discuss your specific regulatory exposure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ROHNER PARTNERSHIP ======================== -->
+  <section style="background: var(--bg-0); border-top: 1px solid var(--border); padding: 5rem 0;">
+    <div class="container">
+      <div class="section-label">Strategic Chemistry Partnership</div>
+      <h2 class="section-title">The Rohner <span class="orange">Advantage</span></h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: center;">
+        <div>
+          <p style="font-size: 1rem; color: var(--gray-light); line-height: 1.8; margin-bottom: 1.25rem;">
+            Our strategic partnership with Rohner in Vancouver, WA is not a preferred vendor
+            arrangement or a reseller agreement. It is a co-engineering relationship — meaning
+            the powder chemistry and the processing equipment are specified by the same technical
+            team, working from the same production data, simultaneously.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.8; margin-bottom: 1.25rem;">
+            This matters because powder coating performance is the product of the interaction between
+            chemistry and equipment. Cure temperature, dwell time, air velocity, substrate preparation,
+            and coating chemistry are all interdependent variables. When the equipment engineer and
+            the chemist are the same team, these variables are optimized together — not negotiated
+            between vendors after the fact.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.8;">
+            No reseller, equipment distributor, or single-discipline consulting firm operating in
+            the Pacific Northwest can replicate this capability.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="padding: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange);"></div>
+            <div style="font-family: var(--font-display); font-size: 3rem; color: var(--orange); line-height: 1; margin-bottom: 0.5rem;">◈</div>
+            <div style="font-family: var(--font-cond); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem;">Co-Engineering Model</div>
+            <p style="font-size: 0.88rem; color: var(--gray); line-height: 1.65;">Chemistry and equipment specified as a unified system by a single technical team. Not sequential handoffs between vendors.</p>
+          </div>
+          <div style="padding: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange);"></div>
+            <div style="font-family: var(--font-display); font-size: 3rem; color: var(--orange); line-height: 1; margin-bottom: 0.5rem;">⬡</div>
+            <div style="font-family: var(--font-cond); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem;">Vancouver, WA — Pacific Northwest Reach</div>
+            <p style="font-size: 0.88rem; color: var(--gray); line-height: 1.65;">Local partnership means faster response, on-site technical support, and supply chain reliability that national distributors cannot match in this region.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA ======================== -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-content">
+        <p class="cta-label">Ready to Begin Your Transition</p>
+        <h2>Start With a<br><span class="orange">Facility Audit.</span></h2>
+        <p style="font-size: 0.95rem; color: var(--gray); max-width: 480px; margin: 0 auto 2rem; line-height: 1.75;">
+          The audit is where every engagement begins — and where we establish the data foundation
+          that makes every downstream decision defensible. Call us or submit a contact request.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Request a Facility Audit</a>
+          <a href="tel:5039747141" class="btn btn-ghost btn-lg">Call 503-974-7141 ext. 800</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Consummate Consulting LLC</div>
+          <p class="footer-tagline">The Architects of the Next Generation<br>of American Metal Finishing</p>
+          <p class="footer-phone"><a href="tel:5039747141">503-974-7141 ext. 800</a></p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="catalog.html">Catalog</a>
+          <a href="about.html">Mission</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Mission</h4>
+          <a href="#mission">Who We Are</a>
+          <a href="#process">Our Process</a>
+          <a href="#roadmap">10-Year Roadmap</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Location</h4>
+          <p>Pacific Northwest</p>
+          <p style="margin-top: 0.5rem;">Rohner Partner Facility<br>Vancouver, WA</p>
+          <p style="margin-top: 0.75rem;"><a href="mailto:info@consummatecon.com" style="color: var(--orange); font-family: var(--font-cond); font-weight: 700; font-size: 0.9rem;">info@consummatecon.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <p>&copy; 2025 Consummate Consulting LLC. All rights reserved.</p>
+        <p class="footer-tag">Industrial Systems Architects &nbsp;///&nbsp; Pacific Northwest</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const nav    = document.getElementById('siteNav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) nav.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
